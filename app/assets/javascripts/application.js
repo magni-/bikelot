@@ -14,13 +14,3 @@
 //= require jquery_ujs
 //= require leaflet
 //= require_tree .
-
-// $(document).ready(function(){
-//   var viewportHeight = $(window).height();
-//   $('.gmaps4rails_map').css({height: viewportHeight});
-
-//   $(window).resize(function(){
-//     viewportHeight = $(window).height();
-//     $('.gmaps4rails_map').css({height: viewportHeight});
-//   })
-// });
