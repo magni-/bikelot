@@ -17,7 +17,7 @@ html,body{
 
 .gmaps4rails_map {
   width: 100%;
-  height: 1000px;
+  height: 800px;
 }
 
 .bing_map {
