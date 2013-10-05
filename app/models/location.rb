@@ -13,4 +13,8 @@ class Location < ActiveRecord::Base
   # def gmaps4rails_address
   #   "#{self.street}, #{self.city}, #{self.country}"
   # end
+
+  def coords
+    [lat, long]
+  end
 end
