@@ -6,8 +6,8 @@ class Location < ActiveRecord::Base
   scope :within_long_range, lambda { |min_long, max_long| where(long: (min_long..max_long)) }
 
   validates :lat, :long, presence: true, numericality: {
-    greater_than: -90,
-    less_than: 90
+    greater_than: -180,
+    less_than: 180
   }
 
   # def gmaps4rails_address
