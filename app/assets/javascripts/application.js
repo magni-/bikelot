@@ -14,3 +14,13 @@
 //= require jquery_ujs
 //= require gmaps4rails/gmaps4rails.googlemaps
 //= require gmaps4rails/gmaps4rails.base
+
+$(document).ready(function(){
+  var viewportHeight = $(window).height();
+  $('.gmaps4rails_map').css({height: viewportHeight});
+
+  $(window).resize(function(){
+    viewportHeight = $(window).height();
+    $('.gmaps4rails_map').css({height: viewportHeight});
+  })
+});
