@@ -3,6 +3,8 @@ class LocationsController < ApplicationController
 
   def index
     @locations = Location.all
+    @locations = Location.within_lat_range(params[:min_lat], params[:max_lat]).within_long_range(params[:min_long], params[:max_long]) if [:min_lat, :max_lat, :min_long, :max_long].all? {|s| params.key? s}
+
     render json: @locations, only: [:lat, :long]
   end
 
