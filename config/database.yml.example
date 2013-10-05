@@ -10,7 +10,7 @@ development:
   database: bikelot_development
   pool: 5
   username: bikelot
-  password: 
+  password:
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -21,7 +21,7 @@ test:
   database: bikelot_test
   pool: 5
   username: bikelot
-  password: 
+  password:
 
 production:
   adapter: postgresql
@@ -29,4 +29,4 @@ production:
   database: bikelot_production
   pool: 5
   username: bikelot
-  password: 
+  password:
