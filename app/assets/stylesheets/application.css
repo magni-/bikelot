@@ -9,5 +9,22 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require leaflet
+ *= require leaflet.ie
  *= require_tree .
  */
+
+ @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+ /*.header_banner{
+  font-family: 'Droid Sans', sans-serif;
+  position: absolute;
+  z-index:100;
+  ;
+ }
+
+.header_banner a { text-decoration:none; }
+.header_banner a:visited { color: #3D3A3A;}
+.header_banner a:link { color: #3D3A3A;}
+.header_banner a:active { color: #3D3A3A;}
+.header_banner a:hover { color: #3D3A3A;}*/

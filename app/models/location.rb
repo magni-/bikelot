@@ -1,7 +1,6 @@
 class Location < ActiveRecord::Base
-	acts_as_gmappable lat: :lat, lng: :long, process_geocoding: false
-
-  attr_accessor :gmaps
+	#acts_as_gmappable lat: :lat, lng: :long, process_geocoding: false
+  #attr_accessor :gmaps
 
   scope :within_lat_range, lambda { |min_lat, max_lat| where(lat: (min_lat..max_lat)) }
   scope :within_long_range, lambda { |min_long, max_long| where(long: (min_long..max_long)) }
@@ -11,8 +10,7 @@ class Location < ActiveRecord::Base
     less_than: 90
   }
 
-  def gmaps4rails_address
-    #describe how to retrieve the address from your model, if you use directly a db column, you can dry your code, see wiki
-    "#{self.street}, #{self.city}, #{self.country}"
-  end
+  # def gmaps4rails_address
+  #   "#{self.street}, #{self.city}, #{self.country}"
+  # end
 end

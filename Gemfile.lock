@@ -50,7 +50,6 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
-    gmaps4rails (1.5.6)
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -68,6 +67,7 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.0)
     kgio (2.8.1)
+    leaflet-rails (0.6.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -165,10 +165,10 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.0.0)
   factory_girl_rails
-  gmaps4rails
   haml-rails
   jbuilder (~> 1.2)
   jquery-rails
+  leaflet-rails
   pg
   pry
   pry-rails
