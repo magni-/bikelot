@@ -30,10 +30,28 @@ class Location < ActiveRecord::Base
     self.score -= 1
   end
 
-  def self.find_by_coords(coords)
-    coords = [coords[:latitude], coords[:longitude]]
-    unless (locs = Location.near(coords, 0.05, {units: :km})).nil?
-      locs.first
+  class << self
+    def find_by_coords(coords)
+      coords = [coords[:latitude], coords[:longitude]]
+      unless (locs = Location.near(coords, 0.05, {units: :km})).nil?
+        locs.first
+      end
+    end
+
+    def find_or_create_by_coords(location_params)
+      if location = Location.find_by_coords(location_params)
+        if location_params[:spots].to_i == -1
+          location.dec_score
+        else
+          location.spots = location_params[:spots] || 1
+          location.inc_score
+        end
+      else
+        unless location_params[:spots].to_i == -1
+          location = Location.new({spots: 1}.merge(location_params.merge({score: 1})))
+        end
+      end
+      location.save if location
     end
   end
 end
