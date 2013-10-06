@@ -15,11 +15,7 @@ class Location < ActiveRecord::Base
 
   validates :score, presence: true
 
-  # geocoded_by :address # need to figure this out later
-  # after_validation :geocode
-
   reverse_geocoded_by :latitude, :longitude
-  # after_validation :reverse_geocode
 
 
   def coords
@@ -33,10 +29,6 @@ class Location < ActiveRecord::Base
   def dec_score
     self.score -= 1
   end
-
-  # def address # kill with fire, fix this
-  #   'NY, NY'
-  # end
 
   def self.find_by_coords(coords)
     coords = [coords[:latitude], coords[:longitude]]

@@ -8,21 +8,21 @@ class LocationsController < ApplicationController
     render json: @locations, only: [:latitude, :longitude]
   end
 
-	#POST
-  #params: lat, long, spots
+	# POST
+  # params: latitude REQ, longitude REQ, spots DEF 1
   def create
     if location = Location.find_by_coords(location_params)
       if params[:location][:spots].to_i == -1
         location.dec_score
       else
-        location.spots = params[:location][:spots]
+        location.spots = params[:location][:spots] || 1
         location.inc_score
       end
     else
       if params[:location][:spots].to_i == -1
         skip = true
       else
-        location = Location.new(location_params.merge({score: 1}))
+        location = Location.new({spots: 1}.merge(location_params.merge({score: 1})))
       end
     end
     puts location.inspect
