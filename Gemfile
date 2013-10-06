@@ -13,6 +13,7 @@ gem 'haml-rails'
 gem 'jbuilder', '~> 1.2'
 #gem 'gmaps4rails'
 gem 'leaflet-rails'
+gem 'geocoder'
 
 group :doc do
   gem 'sdoc', require: false
